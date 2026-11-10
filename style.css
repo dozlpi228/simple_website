@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    font-family: "Tiny5 Duo", "Tiny5", sans-serif;
+}
