@@ -12,9 +12,8 @@ html {
 body {
     display: flex;
     min-height: 100vh;
-    min-height: 100dvh; /* корректная высота на мобильных (учитывает адресную строку) */
+    min-height: 100dvh;
     margin: 0;
-    /* сверху больше места под кнопку языка, снизу и по бокам учитываем «чёлки» */
     padding:
         max(3.5rem, calc(env(safe-area-inset-top) + 3rem))
         max(1rem, env(safe-area-inset-right))
@@ -37,10 +36,9 @@ h1 {
     margin: 0;
     font-size: clamp(1.1rem, 4.5vw + 0.3rem, 2rem);
     line-height: 1.4;
-    overflow-wrap: anywhere; /* длинные слова не ломают вёрстку */
+    overflow-wrap: anywhere;
 }
 
-/* Кнопка переключения языка */
 .lang-btn {
     position: fixed;
     top: max(0.75rem, env(safe-area-inset-top));

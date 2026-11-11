@@ -5,28 +5,19 @@
     document.write('<link rel="stylesheet" href="style.css?v=' + v + '">');
     document.write('<link rel="icon" href="favicon.ico?v=' + v + '" type="image/x-icon">');
 })();
-
-// ---------- Очистка кэша ----------
-// Удаляем все Cache Storage
 if ('caches' in window) {
     caches.keys().then(function (names) {
         names.forEach(function (name) { caches.delete(name); });
     });
 }
-
-// Удаляем service worker'ы (если когда-либо были зарегистрированы)
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(function (regs) {
         regs.forEach(function (reg) { reg.unregister(); });
     });
 }
-
-// Если страницу открыли из bfcache (кнопка «Назад») — перезагружаем
 window.addEventListener('pageshow', function (e) {
     if (e.persisted) location.reload();
 });
-
-// ---------- Переключение языка ----------
 (function () {
     var STORAGE_KEY = 'lang';
 
@@ -36,7 +27,7 @@ window.addEventListener('pageshow', function (e) {
             toggleLabel: 'Switch language to Russian'
         },
         ru: {
-            text: 'Это простой сайт, так что вы можете связаться со мной в Discord: pasteckiy по вопросам размещения рекламы',
+            text: 'Это простой сайт \nВы можете связаться со мной в Discord: pasteckiy по вопросам размещения рекламы',
             toggleLabel: 'Переключить язык на английский'
         }
     };
@@ -62,8 +53,7 @@ window.addEventListener('pageshow', function (e) {
 
         var btn = document.getElementById('lang-toggle');
         if (btn) {
-            // На кнопке показываем язык, на который можно переключиться
-            btn.textContent = lang === 'en' ? 'RU' : 'EN';
+            btn.textContent = lang === 'en' ? 'Изменить на RU' : 'Change to EN';
             btn.setAttribute('aria-label', dict.toggleLabel);
         }
 
