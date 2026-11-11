@@ -1,10 +1,72 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     display: flex;
     min-height: 100vh;
+    min-height: 100dvh; /* корректная высота на мобильных (учитывает адресную строку) */
     margin: 0;
+    /* сверху больше места под кнопку языка, снизу и по бокам учитываем «чёлки» */
+    padding:
+        max(3.5rem, calc(env(safe-area-inset-top) + 3rem))
+        max(1rem, env(safe-area-inset-right))
+        max(1rem, env(safe-area-inset-bottom))
+        max(1rem, env(safe-area-inset-left));
     align-items: center;
     justify-content: center;
     background-color: #000;
     color: #fff;
     font-family: "Tiny5 Duo", "Tiny5", sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 42rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.1rem, 4.5vw + 0.3rem, 2rem);
+    line-height: 1.4;
+    overflow-wrap: anywhere; /* длинные слова не ломают вёрстку */
+}
+
+/* Кнопка переключения языка */
+.lang-btn {
+    position: fixed;
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(0.75rem, env(safe-area-inset-right));
+    z-index: 10;
+    padding: 0.35em 0.9em;
+    font-family: "Momo Signature", cursive;
+    font-size: clamp(0.85rem, 2.5vw + 0.4rem, 1.1rem);
+    line-height: 1.2;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+    color: #000;
+    background: #fff;
+    outline: none;
+}
+
+.lang-btn:active {
+    transform: scale(0.96);
 }
