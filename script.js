@@ -1,5 +1,3 @@
-// ---------- Подключение CSS и иконки без кэша ----------
-// Скрипт должен подключаться в <head> обычным (синхронным) тегом <script>.
 (function () {
     var v = Date.now();
     document.write('<link rel="stylesheet" href="style.css?v=' + v + '">');
@@ -23,11 +21,11 @@ window.addEventListener('pageshow', function (e) {
 
     var translations = {
         en: {
-            text: "it's simple website, so you can contact me in discord: pasteckiy for place advertisment",
+            text: "it's simple website. \nYou can contact me in discord: pasteckiy for place advertisment",
             toggleLabel: 'Switch language to Russian'
         },
         ru: {
-            text: 'Это простой сайт \nВы можете связаться со мной в Discord: pasteckiy по вопросам размещения рекламы',
+            text: 'Это простой сайт. \nВы можете связаться со мной в Discord: pasteckiy по вопросам размещения рекламы',
             toggleLabel: 'Переключить язык на английский'
         }
     };
