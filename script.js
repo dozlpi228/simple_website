@@ -21,11 +21,13 @@ window.addEventListener('pageshow', function (e) {
 
     var translations = {
         en: {
-            text: "it's simple website. \nYou can contact me in discord: pasteckiy for place advertisment",
+            before: "it's simple website, so you can contact me in discord:",
+            after: 'for place advertisment',
             toggleLabel: 'Switch language to Russian'
         },
         ru: {
-            text: 'Это простой сайт. \nВы можете связаться со мной в Discord: pasteckiy по вопросам размещения рекламы',
+            before: 'Это простой сайт, так что вы можете связаться со мной в Discord:',
+            after: 'по вопросам размещения рекламы',
             toggleLabel: 'Переключить язык на английский'
         }
     };
@@ -34,7 +36,7 @@ window.addEventListener('pageshow', function (e) {
         try {
             var saved = localStorage.getItem(STORAGE_KEY);
             if (saved && translations[saved]) return saved;
-        } catch (e) { /* localStorage может быть недоступен */ }
+        } catch (e) {}
         var nav = (navigator.language || 'en').toLowerCase();
         return nav.indexOf('ru') === 0 ? 'ru' : 'en';
     }
@@ -51,7 +53,7 @@ window.addEventListener('pageshow', function (e) {
 
         var btn = document.getElementById('lang-toggle');
         if (btn) {
-            btn.textContent = lang === 'en' ? 'Изменить на RU' : 'Change to EN';
+            btn.textContent = lang === 'en' ? 'RU' : 'EN';
             btn.setAttribute('aria-label', dict.toggleLabel);
         }
 
