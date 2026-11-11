@@ -21,12 +21,12 @@ window.addEventListener('pageshow', function (e) {
 
     var translations = {
         en: {
-            before: "it's simple website, so you can contact me in discord:",
+            before: "it's simple website. You can contact me in discord:",
             after: 'for place advertisment',
             toggleLabel: 'Switch language to Russian'
         },
         ru: {
-            before: 'Это простой сайт, так что вы можете связаться со мной в Discord:',
+            before: 'Это простой сайт. Вы можете связаться со мной в Discord:',
             after: 'по вопросам размещения рекламы',
             toggleLabel: 'Переключить язык на английский'
         }
