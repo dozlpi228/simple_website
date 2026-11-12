@@ -16,7 +16,21 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('pageshow', function (e) {
     if (e.persisted) location.reload();
 });
+(function () {
+    var STORAGE_KEY = 'lang';
 
+    var translations = {
+        en: {
+            before: "",
+            after: '',
+            toggleLabel: 'Switch language to Russian'
+        },
+        ru: {
+            before: '',
+            after: '',
+            toggleLabel: 'Переключить язык на английский'
+        }
+    };
 
     function detectLanguage() {
         try {
