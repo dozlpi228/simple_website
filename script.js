@@ -7,7 +7,7 @@ if ('caches' in window) {
     caches.keys().then(function (names) {
         names.forEach(function (name) { caches.delete(name); });
     });
-}
+}          
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(function (regs) {
         regs.forEach(function (reg) { reg.unregister(); });
@@ -16,21 +16,7 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('pageshow', function (e) {
     if (e.persisted) location.reload();
 });
-(function () {
-    var STORAGE_KEY = 'lang';
 
-    var translations = {
-        en: {
-            before: "it's simple website. You can contact me in discord:",
-            after: 'for place advertisment',
-            toggleLabel: 'Switch language to Russian'
-        },
-        ru: {
-            before: 'Это простой сайт. Вы можете связаться со мной в Discord:',
-            after: 'по вопросам размещения рекламы',
-            toggleLabel: 'Переключить язык на английский'
-        }
-    };
 
     function detectLanguage() {
         try {
