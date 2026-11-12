@@ -22,6 +22,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #000;
+    background-image: url("assets/background.jpg");
     color: #fff;
     font-family: "Tiny5 Duo", "Tiny5", sans-serif;
 }
