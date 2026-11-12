@@ -23,6 +23,10 @@ body {
     justify-content: center;
     background-color: #000;
     background-image: url("assets/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: #fff;
     font-family: "Tiny5 Duo", "Tiny5", sans-serif;
 }
